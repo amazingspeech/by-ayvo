@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>By Ayvo — Contact</title>
+<meta name="description" content="Neem contact op met By Ayvo voor portret-, commerciële of reisfotografie." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="studio.css" />
+</head>
+<body data-page="contact">
+<div data-nav></div>
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="ph-kick">
+      <span class="eyebrow">05 — <span data-lang-nl>Contact</span><span data-lang-en>Contact</span></span>
+      <span class="eyebrow"><span class="acc">●</span> <span data-lang-nl>Beschikbaar 2026</span><span data-lang-en>Available 2026</span></span>
+    </div>
+    <h1 class="ph-title"><span data-lang-nl>Zeg<br>hallo.</span><span data-lang-en>Say<br>hello.</span></h1>
+  </div>
+</header>
+
+<section class="contact-band">
+  <div class="wrap c-grid">
+    <div class="c-form-wrap">
+      <form class="c-form" id="contactForm" novalidate>
+        <div class="field">
+          <label class="mono" for="cf-name"><span data-lang-nl>Naam</span><span data-lang-en>Name</span></label>
+          <input id="cf-name" name="name" type="text" required placeholder="Jouw naam" />
+        </div>
+        <div class="field">
+          <label class="mono" for="cf-email">E-mail</label>
+          <input id="cf-email" name="email" type="email" required placeholder="jij@voorbeeld.nl" />
+        </div>
+        <div class="field">
+          <label class="mono" for="cf-type"><span data-lang-nl>Type opdracht</span><span data-lang-en>Project type</span></label>
+          <select id="cf-type" name="type">
+            <option value="portret">Portret / Portrait</option>
+            <option value="commercieel">Commercieel / Commercial</option>
+            <option value="reizen">Reizen / Travel</option>
+            <option value="anders">Anders / Other</option>
+          </select>
+        </div>
+        <div class="field field--full">
+          <label class="mono" for="cf-msg"><span data-lang-nl>Vertel over je project</span><span data-lang-en>Tell me about your project</span></label>
+          <textarea id="cf-msg" name="message" rows="5" required placeholder="Idee, datum, locatie…"></textarea>
+        </div>
+        <button class="btn c-submit" type="submit"><span data-lang-nl>Verstuur bericht</span><span data-lang-en>Send message</span> <span class="arr">→</span></button>
+        <p class="c-confirm" id="cfConfirm" hidden>
+          <span data-lang-nl>Bedankt — je bericht is genoteerd. Ik reageer binnen 2 werkdagen.</span>
+          <span data-lang-en>Thanks — your message is noted. I’ll reply within 2 business days.</span>
+        </p>
+      </form>
+    </div>
+
+    <aside class="c-info">
+      <div class="ci-block">
+        <h4 class="mono" data-lang-nl>Direct</h4><h4 class="mono" data-lang-en>Direct</h4>
+        <a class="ci-big" href="mailto:hello@byayvo.com">hello@byayvo.com</a>
+        <a class="ci-big" href="tel:+31612345678">+31 6 1234 5678</a>
+      </div>
+      <div class="ci-block">
+        <h4 class="mono" data-lang-nl>Studio</h4><h4 class="mono" data-lang-en>Studio</h4>
+        <p>Rotterdam, NL</p>
+        <p class="mut" data-lang-nl>Op afspraak — door heel Europa beschikbaar.</p>
+        <p class="mut" data-lang-en>By appointment — available across Europe.</p>
+      </div>
+      <div class="ci-block">
+        <h4 class="mono" data-lang-nl>Volg</h4><h4 class="mono" data-lang-en>Follow</h4>
+        <div class="ci-social">
+          <a href="#">Instagram ↗</a>
+          <a href="#">Behance ↗</a>
+          <a href="#">LinkedIn ↗</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<div data-foot></div>
+
+<style>
+  .page-head{padding-top:clamp(40px,6vw,72px);padding-bottom:clamp(20px,3vw,36px)}
+  .ph-kick{display:flex;justify-content:space-between;padding-bottom:24px;border-bottom:var(--bw) solid var(--ink)}
+  .ph-title{font-size:clamp(64px,15vw,200px);text-transform:uppercase;margin-top:24px}
+
+  .contact-band{border-top:var(--bw) solid var(--ink)}
+  .c-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:0;border-bottom:var(--bw) solid var(--ink)}
+  .c-form-wrap{padding:clamp(28px,4vw,64px) clamp(20px,3vw,56px) clamp(28px,4vw,64px) 0;border-right:var(--bw) solid var(--ink)}
+  .c-form{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .field{display:flex;flex-direction:column;gap:9px}
+  .field--full{grid-column:1 / -1}
+  .field label{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--mut)}
+  .field input,.field select,.field textarea{font-family:var(--font);font-size:17px;color:var(--ink);
+    background:transparent;border:0;border-bottom:var(--bw) solid var(--ink);padding:10px 2px;outline:none;
+    border-radius:0;transition:border-color .18s}
+  .field textarea{resize:vertical;border:var(--bw) solid var(--ink);padding:12px;background:var(--paper)}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--acc)}
+  .field input::placeholder,.field textarea::placeholder{color:#a8a39a}
+  .c-submit{grid-column:1 / -1;justify-self:start;margin-top:6px}
+  .c-confirm{grid-column:1 / -1;font-family:var(--mono);font-size:14px;color:var(--acc-ink);
+    border-left:3px solid var(--acc);padding:10px 14px;background:var(--paper)}
+
+  .c-info{padding:clamp(28px,4vw,64px) 0 clamp(28px,4vw,64px) clamp(24px,3vw,56px);
+    display:flex;flex-direction:column;gap:clamp(28px,3vw,44px)}
+  .ci-block h4{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--mut);margin-bottom:14px}
+  .ci-big{display:block;font-size:clamp(20px,2vw,26px);font-weight:600;letter-spacing:-.02em;text-decoration:none;
+    color:var(--ink);padding:4px 0;transition:color .15s}
+  .ci-big:hover{color:var(--acc)}
+  .ci-block p{font-size:18px}
+  .ci-block p.mut{color:var(--mut);font-size:15px;margin-top:6px;max-width:34ch}
+  .ci-social{display:flex;flex-direction:column;gap:8px}
+  .ci-social a{text-decoration:none;font-size:17px;font-weight:600;color:var(--ink);transition:color .15s}
+  .ci-social a:hover{color:var(--acc)}
+
+  @media(max-width:880px){
+    .c-grid{grid-template-columns:1fr}
+    .c-form-wrap{border-right:0;border-bottom:var(--bw) solid var(--ink);padding-right:0}
+    .c-form{grid-template-columns:1fr}
+    .c-info{padding-left:0}
+  }
+</style>
+
+<script src="image-slot.js"></script>
+<script src="site.js"></script>
+<script>
+  (function () {
+    var form = document.getElementById('contactForm');
+    var confirm = document.getElementById('cfConfirm');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      confirm.hidden = false;
+      form.querySelector('.c-submit').disabled = true;
+      form.querySelectorAll('input,select,textarea').forEach(function (el) { el.disabled = true; });
+    });
+  })();
+</script>
+</body>
+</html>
