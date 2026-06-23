@@ -27,6 +27,7 @@
 <header class="hero" data-screen-label="Hero">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-grain" aria-hidden="true"></div>
   <div class="wrap hero-inner">
     <div class="hero-kick">
       <span class="eyebrow">Fotografie — Rotterdam</span>
@@ -87,7 +88,7 @@
 </section>
 
 <!-- ===================== CLIENTS / PRESS ===================== -->
-<section class="clients">
+<section class="clients" hidden>
   <div class="wrap clients-in">
     <span class="eyebrow" data-lang-nl>Vertrouwd door &amp; gezien in</span>
     <span class="eyebrow" data-lang-en>Trusted by &amp; featured in</span>
@@ -110,12 +111,12 @@
       <a class="eyebrow feat-link" href="portfolio.html"><span data-lang-nl>Alle projecten</span><span data-lang-en>All projects</span> →</a>
     </div>
     <div class="feat-grid reveal">
-      <image-slot id="home-feat" class="feat-img" shape="rect" placeholder="featured — cover"></image-slot>
+      <image-slot id="home-feat" class="feat-img" shape="rect" fit="cover" src="assets/architectuur-zwart.jpg" placeholder="featured — cover"></image-slot>
       <div class="feat-meta">
         <span class="mono">2026 / 01 — <span data-lang-nl>Commercieel</span><span data-lang-en>Commercial</span></span>
-        <h3>Studio Vé — <span data-lang-nl>Keramiek</span><span data-lang-en>Ceramics</span></h3>
-        <p data-lang-nl>Een campagne in stilleven: tactiel, contrastrijk en stil. Twaalf objecten, één licht, één verhaal.</p>
-        <p data-lang-en>A still-life campaign: tactile, high-contrast and quiet. Twelve objects, one light, one story.</p>
+        <h3><span data-lang-nl>Zwart paviljoen</span><span data-lang-en>Black pavilion</span></h3>
+        <p data-lang-nl>Een studie in vorm, materiaal en licht — een strak zwart volume tegen baksteen. Architectuur als portret.</p>
+        <p data-lang-en>A study in form, material and light — a sharp black volume against brick. Architecture as portrait.</p>
         <a class="btn btn--ghost" href="portfolio.html"><span data-lang-nl>Bekijk project</span><span data-lang-en>View project</span> <span class="arr">→</span></a>
       </div>
     </div>
@@ -182,13 +183,18 @@
     transform-origin:58% 50%}
   .hero-veil{position:absolute;inset:0;z-index:-1;background:
     linear-gradient(to bottom,rgba(11,11,10,.12) 0%,rgba(11,11,10,.28) 48%,rgba(11,11,10,.78) 84%,rgba(11,11,10,.93) 100%)}
+  .hero-grain{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:160px 160px}
+  .hero::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+    box-shadow:inset 0 0 170px 30px rgba(0,0,0,.5),inset 0 -70px 130px rgba(0,0,0,.42)}
   .hero-inner{width:100%;color:var(--paper);padding-block:clamp(36px,7vh,84px) clamp(64px,12vh,124px)}
   .hero-kick{display:flex;justify-content:space-between;gap:20px;max-width:780px;
     padding-bottom:20px;margin-bottom:clamp(24px,4vh,40px);border-bottom:1px solid rgba(246,245,241,.28)}
-  .hero-kick .eyebrow{color:rgba(246,245,241,.82)}
-  .hero-h{font-size:clamp(60px,13vw,180px);text-transform:uppercase;color:var(--paper);letter-spacing:-.04em}
+  .hero-kick .eyebrow{color:rgba(246,245,241,.82);text-shadow:0 1px 12px rgba(0,0,0,.45)}
+  .hero-h{font-size:clamp(60px,13vw,180px);text-transform:uppercase;color:var(--paper);letter-spacing:-.04em;
+    text-shadow:0 2px 30px rgba(0,0,0,.5)}
   .hero-sub{max-width:44ch;margin-top:clamp(20px,3vh,30px);font-size:clamp(17px,1.5vw,21px);
-    line-height:1.45;color:rgba(246,245,241,.82)}
+    line-height:1.45;color:rgba(246,245,241,.82);text-shadow:0 1px 18px rgba(0,0,0,.55)}
   .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:clamp(28px,4vh,40px)}
   .hero-btn{background:var(--paper);border-color:var(--paper);color:var(--ink)}
   .hero-btn:hover{background:var(--acc);border-color:var(--acc);color:var(--ink)}
@@ -203,6 +209,8 @@
   @media (prefers-reduced-motion:no-preference){
     .hero-bg{animation:kenburns 24s ease-in-out infinite alternate}
     @keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.08)}}
+    .hero-grain{animation:heroGrain 1.1s steps(4) infinite}
+    @keyframes heroGrain{0%{background-position:0 0}25%{background-position:-32px 18px}50%{background-position:26px -24px}75%{background-position:-18px 30px}100%{background-position:0 0}}
     /* resting state is visible; we animate FROM hidden so paused/print contexts never blank out */
     .hero-inner>*{animation:heroIn 1.2s cubic-bezier(.2,.7,.2,1) forwards}
     .hero-kick{animation-delay:.15s}
