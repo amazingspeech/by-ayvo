@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>By Ayvo — Contact</title>
 <meta name="description" content="Neem contact op met By Ayvo voor portret-, commerciële of reisfotografie." />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="By Ayvo" />
+<meta property="og:title" content="By Ayvo — Contact" />
+<meta property="og:description" content="Neem contact op met By Ayvo voor portret-, commerciële of reisfotografie." />
+<meta property="og:image" content="assets/ayvo-portrait.jpeg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="By Ayvo — Contact" />
+<meta name="twitter:description" content="Neem contact op met By Ayvo voor portret-, commerciële of reisfotografie." />
+<meta name="twitter:image" content="assets/ayvo-portrait.jpeg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -50,8 +60,8 @@
         </div>
         <button class="btn c-submit" type="submit"><span data-lang-nl>Verstuur bericht</span><span data-lang-en>Send message</span> <span class="arr">→</span></button>
         <p class="c-confirm" id="cfConfirm" hidden>
-          <span data-lang-nl>Bedankt — je bericht is genoteerd. Ik reageer binnen 2 werkdagen.</span>
-          <span data-lang-en>Thanks — your message is noted. I’ll reply within 2 business days.</span>
+          <span data-lang-nl>Je mailprogramma opent met het bericht klaar — klik daar op verzenden. Lukt dat niet? Mail naar hello@byayvo.com.</span>
+          <span data-lang-en>Your mail app opens with the message ready — just hit send there. Doesn’t open? Email hello@byayvo.com.</span>
         </p>
       </form>
     </div>
@@ -133,9 +143,20 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
+      var name = form.name.value.trim();
+      var email = form.email.value.trim();
+      var type = form.type.value;
+      var msg = form.message.value.trim();
+      var subject = 'Nieuwe aanvraag (' + type + ') — ' + name;
+      var body =
+        'Naam: ' + name + '\n' +
+        'E-mail: ' + email + '\n' +
+        'Type opdracht: ' + type + '\n\n' +
+        msg + '\n';
+      window.location.href = 'mailto:hello@byayvo.com'
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(body);
       confirm.hidden = false;
-      form.querySelector('.c-submit').disabled = true;
-      form.querySelectorAll('input,select,textarea').forEach(function (el) { el.disabled = true; });
     });
   })();
 </script>
