@@ -7,306 +7,189 @@
 <meta name="description" content="By Ayvo — portret-, commerciële en reisfotografie. Rotterdam." />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="By Ayvo" />
 <meta property="og:title" content="By Ayvo — Fotografie" />
 <meta property="og:description" content="By Ayvo — portret-, commerciële en reisfotografie. Rotterdam." />
 <meta property="og:image" content="assets/ayvo-portrait.jpeg" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="By Ayvo — Fotografie" />
-<meta name="twitter:description" content="By Ayvo — portret-, commerciële en reisfotografie. Rotterdam." />
-<meta name="twitter:image" content="assets/ayvo-portrait.jpeg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="studio.css" />
+<link rel="stylesheet" href="flagship.css" />
 </head>
-<body data-page="home">
-<div data-nav></div>
+<body data-page="home-vip">
+
+<!-- grain / progress / cursor -->
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"><span class="lbl">Bekijk</span></div>
+
+<!-- ===================== LOADER ===================== -->
+<div class="loader" aria-hidden="true">
+  <div class="loader-in">
+    <div class="loader-name"><span>By Ayvo</span><span class="dot">.</span></div>
+    <div class="loader-meta"><span>Fotografie</span><span>·</span><span>Rotterdam</span></div>
+  </div>
+  <div class="loader-count">000</div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav on-dark">
+  <a class="brand" href="index.html">By Ayvo<span class="dot">.</span></a>
+  <div class="nav-links">
+    <a href="portfolio.html">Werk</a>
+    <a href="diensten.html">Diensten</a>
+    <a href="over.html">Over</a>
+    <a href="blog.html">Journal</a>
+  </div>
+  <a class="nav-cta" href="contact.html" data-mag>Contact</a>
+</nav>
 
 <!-- ===================== HERO ===================== -->
-<header class="hero" data-screen-label="Hero">
-  <div class="hero-bg" aria-hidden="true"></div>
+<header class="hero lead" data-screen-label="Hero">
+  <div class="hero-depth" data-cursor="depth">
+    <image-slot id="heroSlot" class="hero-img" shape="rect" fit="cover" src="assets/hero.jpg" placeholder="hero"></image-slot>
+  </div>
   <div class="hero-veil" aria-hidden="true"></div>
-  <div class="hero-grain" aria-hidden="true"></div>
   <div class="wrap hero-inner">
-    <div class="hero-kick">
-      <span class="eyebrow">Fotografie / Rotterdam</span>
-      <span class="eyebrow" data-lang-nl>Beschikbaar 2026</span>
-      <span class="eyebrow" data-lang-en>Available 2026</span>
+    <div class="hero-kick eyebrow hero-fade">
+      <span id="heroLoc">Fotografie · Rotterdam</span>
+      <span id="heroAvail">Beschikbaar 2027</span>
     </div>
     <h1 class="hero-h">
-      <span data-lang-nl>Wat woorden<br><span class="acc">niet zeggen</span>.</span>
-      <span data-lang-en>What words<br><span class="acc">can’t say</span>.</span>
+      <span class="ln"><span id="heroTitle1">Wat woorden</span></span>
+      <span class="ln"><span id="heroTitle2"><em>niet</em> zeggen.</span></span>
     </h1>
-    <p class="hero-sub">
-      <span data-lang-nl>Portret, merk en reizen. Ik zoek de emotie die niemand uitspreekt, en leg vast wat blijft.</span>
-      <span data-lang-en>Portrait, brand and travel. I look for the emotion no one says out loud, and capture what stays.</span>
-    </p>
-    <div class="hero-btns">
-      <a class="btn hero-btn" href="portfolio.html"><span data-lang-nl>Bekijk werk</span><span data-lang-en>View work</span> <span class="arr">→</span></a>
-      <a class="btn hero-btn hero-btn--ghost" href="diensten.html"><span data-lang-nl>Diensten &amp; tarieven</span><span data-lang-en>Services &amp; rates</span></a>
+    <p class="hero-sub hero-fade" id="heroSub">Portret, merk en reizen. Ik zoek de emotie die niemand uitspreekt — en leg vast wat blijft.</p>
+    <div class="hero-btns hero-fade">
+      <a class="btn" href="portfolio.html" data-mag>Bekijk werk <span class="arr">→</span></a>
+      <a class="btn btn--ghost" href="diensten.html" data-mag>Diensten &amp; tarieven</a>
     </div>
   </div>
-  <a class="hero-scroll" href="#what" aria-label="Scroll">
-    <span class="hero-scroll__label mono">Scroll</span>
-    <span class="hero-scroll__line"></span>
-  </a>
+  <div class="hero-scroll"><span class="l">Scroll</span><span class="bar"></span></div>
 </header>
 
-<!-- ===================== CATEGORY INDEX ===================== -->
-<section class="section index-sec" id="what">
+<!-- ===================== KINETISCHE REGEL ===================== -->
+<div class="kinetic" aria-hidden="true">
+  <div class="kinetic-track" id="kinetic">
+    <span>Op gevoel</span><span class="dot">/</span><span>Op ritme</span><span class="dot">/</span><span>Op het juiste moment</span><span class="dot">/</span><span>Portret</span><span class="dot">/</span><span>Merk</span><span class="dot">/</span><span>Reizen</span><span class="dot">/</span><span>Op gevoel</span><span class="dot">/</span><span>Op ritme</span><span class="dot">/</span><span>Op het juiste moment</span><span class="dot">/</span><span>Portret</span><span class="dot">/</span><span>Merk</span><span class="dot">/</span><span>Reizen</span><span class="dot">/</span>
+    <span>Op gevoel</span><span class="dot">/</span><span>Op ritme</span><span class="dot">/</span><span>Op het juiste moment</span><span class="dot">/</span><span>Portret</span><span class="dot">/</span><span>Merk</span><span class="dot">/</span><span>Reizen</span><span class="dot">/</span><span>Op gevoel</span><span class="dot">/</span><span>Op ritme</span><span class="dot">/</span><span>Op het juiste moment</span><span class="dot">/</span><span>Portret</span><span class="dot">/</span><span>Merk</span><span class="dot">/</span><span>Reizen</span><span class="dot">/</span>
+  </div>
+</div>
+
+<!-- ===================== MANIFESTO ===================== -->
+<section class="manifesto" data-screen-label="Manifest">
+  <div class="wrap">
+    <span class="eyebrow">01 — Manifest</span>
+    <h2 class="mani-h" id="maniText">Ik kom uit de muziek.</h2>
+  </div>
+</section>
+
+<!-- ===================== HORIZONTALE WERK-STROOK ===================== -->
+<section class="strip-sec" data-screen-label="Werk-strook">
+  <div class="wrap strip-head">
+    <h2>Recent werk</h2>
+    <a class="eyebrow" href="portfolio.html" style="white-space:nowrap">Alle projecten →</a>
+  </div>
+  <div class="kstrip" id="kstrip"></div>
+  <div class="strip-hint"><span>←  Sleep / scroll horizontaal</span></div>
+</section>
+
+<!-- ===================== UITGELICHTE CASE ===================== -->
+<section class="work" data-screen-label="Uitgelicht">
   <div class="wrap">
     <div class="sec-head">
-      <h2 data-lang-nl>Wat ik doe</h2>
-      <h2 data-lang-en>What I do</h2>
-      <span class="eyebrow">03 / <span data-lang-nl>Specialismen</span><span data-lang-en>Specialisms</span></span>
+      <h2>Uitgelicht</h2>
+      <a class="eyebrow" href="portfolio.html" style="white-space:nowrap">Bekijk reeks →</a>
     </div>
-  </div>
-  <div class="index-rows">
-    <a class="irow wrap" href="portfolio.html#portret">
-      <span class="mono num">01</span>
-      <span class="ititle"><h3>Portret</h3><span class="ien">Portrait</span></span>
-      <span class="idesc" data-lang-nl>Mensen, eerlijk en dichtbij. Studio of op locatie.</span>
-      <span class="idesc" data-lang-en>People, honest and close. Studio or on location.</span>
-      <span class="iarr">→</span>
-    </a>
-    <a class="irow wrap" href="portfolio.html#commercieel">
-      <span class="mono num">02</span>
-      <span class="ititle"><h3>Commercieel</h3><span class="ien">Commercial</span></span>
-      <span class="idesc" data-lang-nl>Merken en producten met karakter en richting.</span>
-      <span class="idesc" data-lang-en>Brands &amp; products with character and direction.</span>
-      <span class="iarr">→</span>
-    </a>
-    <a class="irow wrap" href="portfolio.html#reizen">
-      <span class="mono num">03</span>
-      <span class="ititle"><h3>Reizen</h3><span class="ien">Travel</span></span>
-      <span class="idesc" data-lang-nl>Plekken, licht en toeval. Daar waar het verhaal zit.</span>
-      <span class="idesc" data-lang-en>Places, light and chance. Wherever the story sits.</span>
-      <span class="iarr">→</span>
-    </a>
+    <div class="case rv" id="featuredCase"></div>
   </div>
 </section>
 
-<!-- ===================== CLIENTS / PRESS ===================== -->
-<section class="clients" hidden>
-  <div class="wrap clients-in">
-    <span class="eyebrow" data-lang-nl>Vertrouwd door &amp; gezien in</span>
-    <span class="eyebrow" data-lang-en>Trusted by &amp; featured in</span>
-    <div class="logos">
-      <image-slot id="home-logo-1" class="logo" shape="rect" fit="contain" placeholder="logo"></image-slot>
-      <image-slot id="home-logo-2" class="logo" shape="rect" fit="contain" placeholder="logo"></image-slot>
-      <image-slot id="home-logo-3" class="logo" shape="rect" fit="contain" placeholder="logo"></image-slot>
-      <image-slot id="home-logo-4" class="logo" shape="rect" fit="contain" placeholder="logo"></image-slot>
-      <image-slot id="home-logo-5" class="logo" shape="rect" fit="contain" placeholder="logo"></image-slot>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== FEATURED PROJECT ===================== -->
-<section class="section feat">
+<!-- ===================== SPECIALISMEN ===================== -->
+<section class="spec" data-screen-label="Specialismen">
   <div class="wrap">
-    <div class="sec-head">
-      <h2 data-lang-nl>Uitgelicht</h2>
-      <h2 data-lang-en>Featured</h2>
-      <a class="eyebrow feat-link" href="portfolio.html"><span data-lang-nl>Alle projecten</span><span data-lang-en>All projects</span> →</a>
+    <span class="eyebrow rv">02 — Wat ik doe</span>
+    <div class="spec-rows rv">
+      <a class="srow" href="portfolio.html#portret" data-prev="0">
+        <span class="num">01</span>
+        <span><h3>Portret</h3><span class="en">Portrait</span></span>
+        <span class="arr">→</span>
+      </a>
+      <a class="srow" href="portfolio.html#commercieel" data-prev="1">
+        <span class="num">02</span>
+        <span><h3>Commercieel</h3><span class="en">Commercial</span></span>
+        <span class="arr">→</span>
+      </a>
+      <a class="srow" href="portfolio.html#reizen" data-prev="2">
+        <span class="num">03</span>
+        <span><h3>Reizen</h3><span class="en">Travel</span></span>
+        <span class="arr">→</span>
+      </a>
     </div>
-    <div class="feat-grid reveal">
-      <image-slot id="home-feat" class="feat-img" shape="rect" fit="cover" src="assets/architectuur-zwart.jpg" placeholder="featured — cover"></image-slot>
-      <div class="feat-meta">
-        <span class="mono">Uitgelicht 2026 / 01 · <span data-lang-nl>Commercieel</span><span data-lang-en>Commercial</span></span>
-        <h3><span data-lang-nl>Zwart paviljoen</span><span data-lang-en>Black pavilion</span></h3>
-        <p data-lang-nl>Een studie in vorm, materiaal en licht. Een strak zwart volume tegen witte muren, waar architectuur bijna een portret wordt.</p>
-        <p data-lang-en>A study in form, material and light. A sharp black volume against white walls, where architecture becomes almost a portrait.</p>
-        <a class="btn btn--ghost" href="portfolio.html"><span data-lang-nl>Bekijk project</span><span data-lang-en>View project</span> <span class="arr">→</span></a>
-      </div>
+  </div>
+</section>
+<div class="spec-preview" id="specPreview" aria-hidden="true"></div>
+
+<!-- ===================== OVER ===================== -->
+<section class="about" data-screen-label="Over">
+  <div class="wrap about-grid">
+    <div class="about-media rv">
+      <div class="pimg" data-px="44"><image-slot id="aboutSlot" shape="rect" fit="cover" src="assets/ayvo-portrait.jpeg" placeholder="portret"></image-slot></div>
+    </div>
+    <div class="about-text rv rv-2">
+      <span class="eyebrow">Achter de camera</span>
+      <p class="lead" id="aboutLead">Ik ben Ayvo.</p>
+      <p id="aboutBody"></p>
+      <a class="more" id="aboutLink" href="over.html" style="display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--acc);padding-bottom:4px">Meer over mij</a>
     </div>
   </div>
 </section>
 
-<!-- ===================== ABOUT TEASER ===================== -->
-<section class="about-teaser">
-  <div class="wrap at-grid">
-    <image-slot id="home-portrait" class="at-img" shape="rect" fit="cover" src="assets/ayvo-portrait.jpeg" placeholder="portret"></image-slot>
-    <div class="at-text reveal">
-      <span class="eyebrow" data-lang-nl>Achter de camera</span>
-      <span class="eyebrow" data-lang-en>Behind the camera</span>
-      <p class="at-lead" data-lang-nl>Ik ben Ayvo. Ik leg de emotie vast die mensen niet uitspreken, eerlijk en dichtbij, met oog voor het licht.</p>
-      <p class="at-lead" data-lang-en>I’m Ayvo. I capture the emotion people don’t say out loud, honest and close, with an eye for the light.</p>
-      <a class="btn btn--ghost" href="over.html"><span data-lang-nl>Meer over mij</span><span data-lang-en>More about me</span> <span class="arr">→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== JOURNAL TEASER ===================== -->
-<section class="section journal-teaser">
+<!-- ===================== JOURNAL ===================== -->
+<section class="journal" data-screen-label="Journal">
   <div class="wrap">
     <div class="sec-head">
       <h2>Journal</h2>
-      <a class="eyebrow feat-link" href="blog.html"><span data-lang-nl>Alle verhalen</span><span data-lang-en>All stories</span> →</a>
+      <a class="eyebrow" href="blog.html" style="white-space:nowrap">Alle verhalen →</a>
     </div>
-    <div class="jt-grid">
-      <a class="jt-card reveal" href="blog.html">
-        <span class="mono">12.06.2026 · <span data-lang-nl>Portret</span><span data-lang-en>Portrait</span></span>
-        <h3 data-lang-nl>Aan de andere kant van de lens</h3>
-        <h3 data-lang-en>On the other side of the lens</h3>
-      </a>
-      <a class="jt-card reveal" href="blog.html">
-        <span class="mono">02.05.2026 · <span data-lang-nl>Reizen</span><span data-lang-en>Travel</span></span>
-        <h3 data-lang-nl>Het licht van Tenerife</h3>
-        <h3 data-lang-en>The light of Tenerife</h3>
-      </a>
-      <a class="jt-card reveal" href="blog.html">
-        <span class="mono">14.03.2026 · <span data-lang-nl>Techniek</span><span data-lang-en>Craft</span></span>
-        <h3 data-lang-nl>De emotie die niemand uitspreekt</h3>
-        <h3 data-lang-en>The emotion no one says out loud</h3>
-      </a>
-    </div>
+    <div class="jt-grid" id="journalGrid"></div>
   </div>
 </section>
 
-<div data-foot></div>
+<!-- ===================== CTA ===================== -->
+<section class="cta" data-screen-label="Contact">
+  <div class="wrap">
+    <span class="eyebrow" id="ctaEyebrow">Laten we iets maken</span>
+    <h2><span id="ctaTitle1">Klaar voor</span><br><span id="ctaTitle2">jouw <em>verhaal</em>?</span></h2>
+    <a class="btn cta-btn" href="contact.html" data-mag id="ctaBtn">Plan een shoot <span class="arr">→</span></a>
+    <a class="cta-mail" id="ctaMail" href="mailto:hello@byayvo.nl">hello@byayvo.nl</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>© 2027 By Ayvo</span>
+    <div class="foot-links">
+      <a href="portfolio.html">Werk</a>
+      <a href="diensten.html">Diensten</a>
+      <a href="contact.html">Contact</a>
+      <a id="footInsta" href="#" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <span>Rotterdam · NL</span>
+  </div>
+</footer>
 
 <template id="__bundler_thumbnail">
   <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <rect width="100" height="100" fill="#eceae4"/>
-    <rect x="18" y="18" width="64" height="64" fill="none" stroke="#111110" stroke-width="3"/>
-    <circle cx="50" cy="50" r="15" fill="none" stroke="#111110" stroke-width="3"/>
+    <rect width="100" height="100" fill="#0b0b0a"/>
+    <rect x="18" y="18" width="64" height="64" fill="none" stroke="#f6f5f1" stroke-width="3"/>
+    <circle cx="50" cy="50" r="15" fill="none" stroke="#f6f5f1" stroke-width="3"/>
     <circle cx="50" cy="50" r="5" fill="oklch(0.66 0.14 52)"/>
   </svg>
 </template>
 
-<style>
-  /* ---- home-specific: cinematic hero ---- */
-  .hero{position:relative;min-height:calc(100svh - 68px);overflow:hidden;isolation:isolate;
-    display:flex;align-items:flex-end;background:#0b0b0a}
-  .hero-bg{position:absolute;inset:0;z-index:-2;background:url('assets/hero.jpg') 60% 42%/cover no-repeat;
-    transform-origin:58% 50%}
-  .hero-veil{position:absolute;inset:0;z-index:-1;background:
-    linear-gradient(to bottom,rgba(11,11,10,.12) 0%,rgba(11,11,10,.28) 48%,rgba(11,11,10,.78) 84%,rgba(11,11,10,.93) 100%)}
-  .hero-grain{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:160px 160px}
-  .hero::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
-    box-shadow:inset 0 0 170px 30px rgba(0,0,0,.5),inset 0 -70px 130px rgba(0,0,0,.42)}
-  .hero-inner{width:100%;color:var(--paper);padding-block:clamp(36px,7vh,84px) clamp(64px,12vh,124px)}
-  .hero-kick{display:flex;justify-content:space-between;gap:20px;max-width:780px;
-    padding-bottom:20px;margin-bottom:clamp(24px,4vh,40px);border-bottom:1px solid rgba(246,245,241,.28)}
-  .hero-kick .eyebrow{color:rgba(246,245,241,.82);text-shadow:0 1px 12px rgba(0,0,0,.45)}
-  .hero-h{font-size:clamp(48px,10vw,138px);text-transform:uppercase;color:var(--paper);letter-spacing:-.04em;
-    text-shadow:0 2px 30px rgba(0,0,0,.5)}
-  .hero-sub{max-width:44ch;margin-top:clamp(20px,3vh,30px);font-size:clamp(17px,1.5vw,21px);
-    line-height:1.45;color:rgba(246,245,241,.82);text-shadow:0 1px 18px rgba(0,0,0,.55)}
-  .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:clamp(28px,4vh,40px)}
-  .hero-btn{background:var(--paper);border-color:var(--paper);color:var(--ink)}
-  .hero-btn:hover{background:var(--acc);border-color:var(--acc);color:var(--ink)}
-  .hero-btn--ghost{background:transparent;color:var(--paper);border-color:rgba(246,245,241,.5)}
-  .hero-btn--ghost:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
-  .hero-scroll{position:absolute;right:clamp(20px,5vw,56px);bottom:24px;z-index:2;
-    display:flex;flex-direction:column;align-items:center;gap:9px;text-decoration:none;color:rgba(246,245,241,.72)}
-  .hero-scroll__label{font-size:10px;letter-spacing:.24em;text-transform:uppercase}
-  .hero-scroll__line{width:1px;height:46px;background:linear-gradient(to bottom,rgba(246,245,241,.85),rgba(246,245,241,0))}
-  @media (max-height:600px){.hero-scroll{display:none}}
-
-  @media (prefers-reduced-motion:no-preference){
-    .hero-bg{animation:kenburns 24s ease-in-out infinite alternate}
-    @keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.08)}}
-    .hero-grain{animation:heroGrain 1.1s steps(4) infinite}
-    @keyframes heroGrain{0%{background-position:0 0}25%{background-position:-32px 18px}50%{background-position:26px -24px}75%{background-position:-18px 30px}100%{background-position:0 0}}
-    /* resting state is visible; we animate FROM hidden so paused/print contexts never blank out */
-    .hero-inner>*{animation:heroIn 1.2s cubic-bezier(.2,.7,.2,1) forwards}
-    .hero-kick{animation-delay:.15s}
-    .hero-h{animation-delay:.35s}
-    .hero-sub{animation-delay:.6s}
-    .hero-btns{animation-delay:.82s}
-    @keyframes heroIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-    .hero-scroll{animation:heroScrollIn 1s ease 1.5s forwards}
-    @keyframes heroScrollIn{from{opacity:0}to{opacity:1}}
-    .hero-scroll__line{transform-origin:top center;animation:heroScrollPulse 2.4s ease-in-out infinite}
-    @keyframes heroScrollPulse{0%,100%{transform:scaleY(.35);opacity:.35}50%{transform:scaleY(1);opacity:.95}}
-  }
-
-  .index-rows{border-top:var(--bw) solid var(--ink)}
-  .irow{display:grid;grid-template-columns:80px 1fr 1.1fr 60px;align-items:center;gap:24px;
-    padding-block:34px;border-bottom:var(--bw) solid var(--ink);text-decoration:none;color:var(--ink);
-    transition:background .2s,color .2s}
-  .irow:hover{background:var(--ink);color:var(--bg)}
-  .irow:hover .ien,.irow:hover .idesc{color:rgba(246,245,241,.65)}
-  .irow:hover .iarr{color:var(--acc)}
-  .irow .num{font-size:15px}
-  .ititle h3{font-size:clamp(34px,4.4vw,56px);text-transform:uppercase}
-  .ititle .ien{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut)}
-  .idesc{font-size:16px;color:var(--mut)}
-  .iarr{font-size:28px;text-align:right}
-
-  .clients{border-bottom:var(--bw) solid var(--ink);padding-block:40px;background:var(--paper)}
-  .clients-in{display:flex;align-items:center;gap:40px;flex-wrap:wrap}
-  .logos{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;flex:1;min-width:280px}
-  .logo{height:64px}
-
-  .feat-link{text-decoration:none}
-  .feat-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:0;border:var(--bw) solid var(--ink)}
-  .feat-img{height:min(56vw,560px);border:0;border-right:var(--bw) solid var(--ink)}
-  .feat-meta{padding:clamp(24px,3vw,46px);display:flex;flex-direction:column;gap:18px;justify-content:center}
-  .feat-meta h3{font-size:clamp(30px,3.6vw,48px);text-transform:uppercase}
-  .feat-meta p{color:var(--mut);max-width:36ch}
-  .feat-meta .btn{align-self:flex-start;margin-top:8px}
-
-  .about-teaser{border-top:var(--bw) solid var(--ink);border-bottom:var(--bw) solid var(--ink);background:var(--paper)}
-  .at-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,80px);align-items:center;
-    padding-block:clamp(48px,7vw,96px)}
-  .at-img{height:min(60vw,520px)}
-  .at-text{display:flex;flex-direction:column;gap:24px;align-items:flex-start}
-  .at-lead{font-size:clamp(26px,3.4vw,46px);font-weight:600;letter-spacing:-.025em;line-height:1.05;text-wrap:balance}
-
-  .jt-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:var(--bw) solid var(--ink)}
-  .jt-card{padding:34px 28px 44px;border-right:var(--bw) solid var(--ink);border-bottom:var(--bw) solid var(--ink);
-    text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:20px;min-height:220px;
-    transition:background .2s,color .2s}
-  .jt-card:last-child{border-right:0}
-  .jt-card:hover{background:var(--acc)}
-  .jt-card h3{font-size:clamp(22px,1.9vw,28px);letter-spacing:-.02em;line-height:1.05}
-  .jt-card .mono{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut)}
-
-  .lightbox{position:fixed;inset:0;z-index:100;background:rgba(11,11,10,.92);display:flex;
-    align-items:center;justify-content:center;padding:clamp(16px,4vw,56px)}
-  .lightbox[hidden]{display:none}
-  .lightbox img{max-width:100%;max-height:100%;object-fit:contain;border:var(--bw) solid var(--bg)}
-  .lb-close{position:absolute;top:20px;right:24px;width:48px;height:48px;border:var(--bw) solid var(--bg);
-    background:transparent;color:var(--bg);font-size:20px;cursor:pointer;display:flex;align-items:center;
-    justify-content:center;transition:background .18s,color .18s}
-  .lb-close:hover{background:var(--bg);color:var(--ink)}
-
-  @media(max-width:880px){
-    .hero-kick{flex-direction:column;gap:6px}
-    .irow{grid-template-columns:48px 1fr 32px}
-    .irow .idesc{display:none}
-    .feat-grid{grid-template-columns:1fr}
-    .feat-img{border-right:0;border-bottom:var(--bw) solid var(--ink);height:70vw}
-    .at-grid{grid-template-columns:1fr}
-    .logos{grid-template-columns:repeat(3,1fr)}
-    .jt-grid{grid-template-columns:1fr}
-    .jt-card{border-right:0}
-  }
-</style>
-
-<div class="lightbox" id="lightbox" hidden>
-  <button class="lb-close" type="button" aria-label="Sluiten">✕</button>
-  <img id="lbImg" alt="" />
-</div>
-
 <script src="image-slot.js"></script>
-<script src="site.js"></script>
-<script>
-  (function () {
-    var lb = document.getElementById('lightbox');
-    var lbImg = document.getElementById('lbImg');
-    function open(src) { lbImg.src = src; lb.hidden = false; document.body.style.overflow = 'hidden'; }
-    function close() { lb.hidden = true; lbImg.src = ''; document.body.style.overflow = ''; }
-    document.querySelectorAll('[data-zoom]').forEach(function (b) {
-      b.addEventListener('click', function () { open(b.getAttribute('data-zoom')); });
-    });
-    lb.addEventListener('click', function (e) { if (e.target === lb || e.target.classList.contains('lb-close')) close(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lb.hidden) close(); });
-  })();
-</script>
+<script src="cms-render.js"></script>
 </body>
 </html>

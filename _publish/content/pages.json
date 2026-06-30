@@ -1,0 +1,36 @@
+{
+  "manifest": "Ik kom uit de *muziek*. Het juiste moment voelde ik ooit in een ritme; nu vind ik het door de *lens*, vlak voordat het voorbij is.",
+  "about": {
+    "image": "assets/ayvo-portrait.jpeg",
+    "lead": "Ik ben Ayvo. Ik leg de emotie vast die mensen *niet* uitspreken, eerlijk en dichtbij, met oog voor het licht.",
+    "body": "Studio of op locatie, portret of merk: het draait om het moment net vóór en net ná de pose. Daar zit het verhaal.",
+    "link_label": "Meer over mij"
+  },
+  "cta": {
+    "eyebrow": "Laten we iets maken",
+    "title_line1": "Klaar voor",
+    "title_line2": "jouw *verhaal*?",
+    "button": "Plan een shoot"
+  },
+  "over": {
+    "portrait": "assets/ayvo-portrait.jpeg",
+    "lead": "Ik fotografeer mensen, merken en plekken, en zoek daarin de emotie die *niemand* uitspreekt.",
+    "bio": [
+      "Ik ben niet als fotograaf begonnen. Tijdens mijn grafische opleiding kreeg ik er steeds meer mee te maken, en in mijn jaren als dj stond ik zelf vaak aan de andere kant van de lens.",
+      "Hoe ouder ik werd, hoe meer ik het bestaan zelf ben gaan waarderen. Dat leg ik vast: niet de perfecte pose, maar het moment waarop iemand even helemaal zichzelf is.",
+      "Ik werk vanuit Rotterdam, voor mensen en merken door heel Europa."
+    ],
+    "approach": [
+      { "title": "Voorbereiding", "text": "Elke shoot begint met een gesprek. Wie ben je, wat wil je zeggen, en voor wie? Het beeld volgt daaruit, niet andersom." },
+      { "title": "De shoot", "text": "Rustig tempo, weinig poespas. Eén lichtbron, veel geduld en ruimte voor het toeval. Daar gebeurt het echte werk." },
+      { "title": "Nabewerking", "text": "Een eigen ontwikkeling met diep contrast en behoud van textuur, in kleur of zwart-wit. Geleverd als hi-res, klaar voor print en web." }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Beschikbaar voor opdrachten",
+    "title_line1": "Zeg",
+    "title_line2": "*hallo*.",
+    "intro": "Vertel me over je project — idee, datum, locatie. Ik denk graag mee.",
+    "studio_lines": ["Rotterdam, NL", "Op afspraak, door heel Europa beschikbaar."]
+  }
+}
