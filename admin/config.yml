@@ -1,0 +1,182 @@
+# ============================================================
+# By Ayvo — Decap CMS configuratie
+# Beheer je foto's en teksten op  byayvo.nl/admin
+# ============================================================
+
+backend:
+  name: github
+  repo: GEBRUIKERSNAAM/REPOSITORY      # <-- PAS AAN: bv. ayvo/byayvo-site
+  branch: main                          # <-- PAS AAN als je standaardtak anders heet
+  # Login-service (Cloudflare Worker uit oauth-worker.js). Vul je Worker-adres in:
+  base_url: https://JOUW-WORKER.workers.dev   # <-- PAS AAN na het deployen van de Worker
+  auth_endpoint: /auth
+
+# Geüploade foto's belanden hier in je repo:
+media_folder: "assets/uploads"
+public_folder: "assets/uploads"
+
+locale: "nl"
+site_url: "https://byayvo.nl"
+display_url: "https://byayvo.nl"
+logo_url: "https://byayvo.nl/favicon.svg"
+
+# Foto's worden automatisch verkleind/geoptimaliseerd bij upload
+media_library:
+  max_file_size: 12000000     # 12 MB grens per upload
+
+collections:
+  # ----------------------------------------------------------
+  - name: "instellingen"
+    label: "⚙︎  Site-instellingen"
+    description: "Hero, contactgegevens en cijfers van de homepage."
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "algemeen"
+        label: "Algemeen & Hero"
+        file: "content/settings.json"
+        fields:
+          - { name: brand, label: "Merknaam", widget: string }
+          - name: hero
+            label: "Hero (bovenste scherm)"
+            widget: object
+            fields:
+              - { name: image, label: "Hero-foto", widget: image, hint: "Liggend beeld, minstens 2000px breed voor scherpte." }
+              - { name: location, label: "Locatie-regel", widget: string }
+              - { name: availability, label: "Beschikbaarheid", widget: string }
+              - { name: title_line1, label: "Titel — regel 1", widget: string }
+              - { name: title_line2, label: "Titel — regel 2", widget: string, hint: "Zet *sterretjes* rond een woord om het in de accentkleur te zetten." }
+              - { name: subtitle, label: "Subtekst", widget: text }
+          - name: stats
+            label: "Cijfers (manifest-balk)"
+            widget: list
+            max: 4
+            summary: "{{fields.value}} — {{fields.label}}"
+            fields:
+              - { name: value, label: "Getal", widget: string }
+              - { name: label, label: "Omschrijving", widget: string }
+          - name: contact
+            label: "Contact"
+            widget: object
+            fields:
+              - { name: email, label: "E-mailadres", widget: string }
+              - { name: phone, label: "Telefoon", widget: string, required: false }
+              - { name: instagram_url, label: "Instagram-link", widget: string, required: false }
+              - { name: instagram_label, label: "Instagram-label", widget: string, required: false, default: "Instagram" }
+          - name: seo
+            label: "SEO & deelvoorbeeld"
+            widget: object
+            required: false
+            fields:
+              - { name: description, label: "Omschrijving (Google)", widget: text, required: false }
+              - { name: og_image, label: "Deelafbeelding (social)", widget: image, required: false }
+
+  # ----------------------------------------------------------
+  - name: "projecten"
+    label: "📸  Projecten / Reeksen"
+    description: "Je portfolio. Sleep om de volgorde op de homepage te bepalen."
+    files:
+      - name: "lijst"
+        label: "Alle projecten"
+        file: "content/projects.json"
+        fields:
+          - name: projects
+            label: "Projecten"
+            label_singular: "Project"
+            widget: list
+            collapsed: true
+            summary: "{{fields.title}}  ·  {{fields.category}}"
+            fields:
+              - { name: title, label: "Titel", widget: string }
+              - { name: category, label: "Categorie", widget: select, options: ["Portret", "Commercieel", "Reizen"] }
+              - { name: date, label: "Jaar", widget: string, required: false }
+              - { name: featured, label: "Uitlichten op homepage", widget: boolean, default: false, hint: "Zet er één op aan — die verschijnt groot bij 'Uitgelicht'." }
+              - { name: cover, label: "Coverfoto", widget: image }
+              - { name: description, label: "Beschrijving", widget: text, required: false }
+              - name: gallery
+                label: "Galerij (extra foto's)"
+                widget: list
+                required: false
+                field: { name: image, label: "Foto", widget: image }
+
+  # ----------------------------------------------------------
+  - name: "journal"
+    label: "✎  Journal / Blog"
+    description: "Korte verhalen die onderaan de homepage en op de Journal-pagina komen."
+    files:
+      - name: "lijst"
+        label: "Alle verhalen"
+        file: "content/journal.json"
+        fields:
+          - name: posts
+            label: "Verhalen"
+            label_singular: "Verhaal"
+            widget: list
+            collapsed: true
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: "Titel", widget: string }
+              - { name: date, label: "Datum", widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+              - { name: category, label: "Categorie", widget: string }
+              - { name: cover, label: "Coverfoto", widget: image }
+              - { name: excerpt, label: "Korte intro", widget: text, required: false }
+              - { name: body, label: "Volledige tekst", widget: markdown, required: false }
+
+  # ----------------------------------------------------------
+  - name: "paginas"
+    label: "📝  Pagina-teksten"
+    description: "Manifest, over-blok en de contactoproep."
+    editor:
+      preview: false
+    files:
+      - name: "home"
+        label: "Homepage-teksten"
+        file: "content/pages.json"
+        fields:
+          - { name: manifest, label: "Manifest-zin", widget: text, hint: "Zet *sterretjes* rond woorden voor de accentkleur." }
+          - name: about
+            label: "Over-blok"
+            widget: object
+            fields:
+              - { name: image, label: "Portretfoto", widget: image }
+              - { name: lead, label: "Openingszin", widget: text, hint: "*sterretjes* = accentkleur." }
+              - { name: body, label: "Tekst", widget: text }
+              - { name: link_label, label: "Knoptekst", widget: string }
+          - name: cta
+            label: "Contactoproep (onderaan)"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Bovenregel", widget: string }
+              - { name: title_line1, label: "Titel — regel 1", widget: string }
+              - { name: title_line2, label: "Titel — regel 2", widget: string, hint: "*sterretjes* = accentkleur." }
+              - { name: button, label: "Knoptekst", widget: string }
+          - name: over
+            label: "Over-pagina"
+            widget: object
+            fields:
+              - { name: portrait, label: "Portretfoto", widget: image }
+              - { name: lead, label: "Openingszin", widget: text, hint: "*sterretjes* = accentkleur." }
+              - name: bio
+                label: "Biografie (alinea's)"
+                widget: list
+                field: { name: text, label: "Alinea", widget: text }
+              - name: approach
+                label: "Aanpak (stappen)"
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title, label: "Titel", widget: string }
+                  - { name: text, label: "Tekst", widget: text }
+          - name: contact
+            label: "Contact-pagina"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Bovenregel", widget: string }
+              - { name: title_line1, label: "Titel — regel 1", widget: string }
+              - { name: title_line2, label: "Titel — regel 2", widget: string, hint: "*sterretjes* = accentkleur." }
+              - { name: intro, label: "Intro-tekst", widget: text }
+              - name: studio_lines
+                label: "Studio-regels"
+                widget: list
+                field: { name: line, label: "Regel", widget: string }

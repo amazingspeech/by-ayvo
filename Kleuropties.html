@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>By Ayvo — Kleuropties</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#eceae4; --ink:#111110; --paper:#f6f5f1; --mut:#6f6c64;
+    --font:'Space Grotesk',system-ui,sans-serif; --mono:'IBM Plex Mono',monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+    -webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+  .wrap{max-width:1180px;margin:0 auto;padding:clamp(28px,5vw,64px)}
+  .head{border-bottom:2px solid var(--ink);padding-bottom:20px;margin-bottom:14px;
+    display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  h1{margin:0;font-size:clamp(34px,5vw,56px);font-weight:700;letter-spacing:-.03em;text-transform:uppercase;line-height:.95}
+  .kick{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+  .intro{max-width:60ch;color:var(--mut);font-size:15.5px;margin:18px 0 36px;line-height:1.5}
+
+  /* base palette strip */
+  .palette{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:48px}
+  .sw{display:flex;flex-direction:column;gap:8px}
+  .chip{width:120px;height:78px;border:2px solid var(--ink)}
+  .sw b{font-size:13px;font-weight:600}
+  .sw span{font-family:var(--mono);font-size:11px;color:var(--mut);letter-spacing:.02em}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+
+  .opt{border:2px solid var(--ink);background:#0b0b0a;overflow:hidden;position:relative;
+    display:flex;flex-direction:column}
+  .opt.feat{outline:4px solid var(--ac);outline-offset:4px}
+  .opt .demo{padding:34px 30px 30px;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;gap:18px;
+    background:radial-gradient(120% 90% at 80% 10%, rgba(255,255,255,.05), transparent 60%)}
+  .opt .demo h2{margin:0;font-size:clamp(38px,5vw,62px);text-transform:uppercase;letter-spacing:-.04em;
+    line-height:.9;color:var(--paper)}
+  .opt .demo h2 i{font-style:normal;color:var(--ac)}
+  .opt .demo p{margin:0;color:rgba(246,245,241,.7);font-size:14px;max-width:34ch;line-height:1.45}
+  .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+  .b{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:11px 18px;border:2px solid var(--ac)}
+  .b1{background:var(--ac);color:#111110}
+  .b2{background:transparent;color:var(--paper);border-color:rgba(246,245,241,.45)}
+  .meta{display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:14px 18px;background:var(--paper);border-top:2px solid var(--ink)}
+  .meta .nm{font-weight:600;font-size:15px;display:flex;align-items:center;gap:10px}
+  .dot{width:18px;height:18px;border:2px solid var(--ink);background:var(--ac);display:inline-block}
+  .meta .val{font-family:var(--mono);font-size:11px;color:var(--mut)}
+  .tag{position:absolute;top:0;right:0;background:var(--ac);color:#111110;font-family:var(--mono);
+    font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <h1>Kleuropties</h1>
+    <span class="kick">By Ayvo — huisstijl</span>
+  </div>
+  <p class="intro">Je basis blijft hetzelfde: warm gebroken-wit, bijna-zwart en één warme accentkleur. Hieronder vier accent-richtingen — allemaal even licht en verzadigd (oklch L 0.66 · C 0.14), alleen de tint verschilt. Getoond op je nieuwe donkere hero + knoppen. Mijn keuze staat gemarkeerd.</p>
+
+  <div class="palette">
+    <div class="sw"><div class="chip" style="background:#eceae4"></div><b>Achtergrond</b><span>#eceae4</span></div>
+    <div class="sw"><div class="chip" style="background:#f6f5f1"></div><b>Paper</b><span>#f6f5f1</span></div>
+    <div class="sw"><div class="chip" style="background:#111110"></div><b>Inkt</b><span>#111110</span></div>
+    <div class="sw"><div class="chip" style="background:#6f6c64"></div><b>Gedempt</b><span>#6f6c64</span></div>
+  </div>
+
+  <div class="grid">
+    <div class="opt feat" style="--ac:oklch(0.66 0.14 52)">
+      <span class="tag">★ Aanbevolen</span>
+      <div class="demo"><h2>Word <i>gezien</i>.</h2><p>Warm amber — huidige huisstijl. Resoneert met het gouden licht in je hero.</p>
+        <div class="btns"><span class="b b1">Bekijk werk</span><span class="b b2">Diensten</span></div></div>
+      <div class="meta"><span class="nm"><span class="dot"></span>Amber</span><span class="val">oklch(0.66 0.14 52)</span></div>
+    </div>
+
+    <div class="opt" style="--ac:oklch(0.66 0.14 32)">
+      <div class="demo"><h2>Word <i>gezien</i>.</h2><p>Terracotta — iets roder en aardser, filmischer en warmer.</p>
+        <div class="btns"><span class="b b1">Bekijk werk</span><span class="b b2">Diensten</span></div></div>
+      <div class="meta"><span class="nm"><span class="dot"></span>Terracotta</span><span class="val">oklch(0.66 0.14 32)</span></div>
+    </div>
+
+    <div class="opt" style="--ac:oklch(0.66 0.14 75)">
+      <div class="demo"><h2>Word <i>gezien</i>.</h2><p>Oker/goud — lichter en zonniger, neigt naar geel-goud.</p>
+        <div class="btns"><span class="b b1">Bekijk werk</span><span class="b b2">Diensten</span></div></div>
+      <div class="meta"><span class="nm"><span class="dot"></span>Oker</span><span class="val">oklch(0.66 0.14 75)</span></div>
+    </div>
+
+    <div class="opt" style="--ac:oklch(0.66 0.11 232)">
+      <div class="demo"><h2>Word <i>gezien</i>.</h2><p>Staalblauw — koel alternatief als je weg wil van warm; strakker, afstandelijker.</p>
+        <div class="btns"><span class="b b1">Bekijk werk</span><span class="b b2">Diensten</span></div></div>
+      <div class="meta"><span class="nm"><span class="dot"></span>Staalblauw</span><span class="val">oklch(0.66 0.11 232)</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

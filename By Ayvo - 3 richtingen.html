@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>By Ayvo — 3 richtingen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; background: #f0eee9; }
+  * { box-sizing: border-box; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#0b0b0b"/>
+    <circle cx="50" cy="50" r="22" fill="none" stroke="#f3f1ec" stroke-width="3"/>
+    <circle cx="50" cy="50" r="9" fill="#f3f1ec"/>
+    <text x="50" y="86" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#f3f1ec" text-anchor="middle">By Ayvo</text>
+  </svg>
+</template>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="directions/noir.jsx"></script>
+<script type="text/babel" src="directions/atelier.jsx"></script>
+<script type="text/babel" src="directions/studio.jsx"></script>
+
+<script type="text/babel">
+  function App() {
+    return (
+      <DesignCanvas>
+        <DCSection id="home" title="By Ayvo — Home" subtitle="Drie visuele richtingen · kies er één en ik bouw de volledige site (Home, Portfolio, Over, Diensten, Contact, Blog)">
+          <DCArtboard id="noir" label="A · NOIR — donker editorial" width={1440} height={2930}>
+            <NoirHome />
+          </DCArtboard>
+          <DCArtboard id="atelier" label="B · ATELIER — licht minimaal" width={1440} height={3055}>
+            <AtelierHome />
+          </DCArtboard>
+          <DCArtboard id="studio" label="C · STUDIO — bold typografisch" width={1440} height={2225}>
+            <StudioHome />
+          </DCArtboard>
+        </DCSection>
+      </DesignCanvas>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

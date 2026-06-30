@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>By Ayvo · Fotografie</title>
+<meta name="description" content="By Ayvo — portret-, commerciële en reisfotografie. Rotterdam." />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="By Ayvo — Fotografie" />
+<meta property="og:description" content="By Ayvo — portret-, commerciële en reisfotografie. Rotterdam." />
+<meta property="og:image" content="assets/ayvo-portrait.jpeg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="flagship.css" />
+</head>
+<body data-page="home-vip">
+
+<!-- grain / progress / cursor -->
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"><span class="lbl">Bekijk</span></div>
+
+<!-- ===================== LOADER ===================== -->
+<div class="loader" aria-hidden="true">
+  <div class="loader-in">
+    <div class="loader-name"><span>By Ayvo</span><span class="dot">.</span></div>
+    <div class="loader-meta"><span>Fotografie</span><span>·</span><span>Rotterdam</span></div>
+  </div>
+  <div class="loader-count">000</div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav on-dark">
+  <a class="brand" href="index.html">By Ayvo<span class="dot">.</span></a>
+  <div class="nav-links">
+    <a href="portfolio.html">Werk</a>
+    <a href="diensten.html">Diensten</a>
+    <a href="over.html">Over</a>
+    <a href="blog.html">Journal</a>
+  </div>
+  <a class="nav-cta" href="contact.html" data-mag>Contact</a>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero lead" data-screen-label="Hero">
+  <div class="hero-depth" data-cursor="depth">
+    <image-slot id="heroSlot" class="hero-img" shape="rect" fit="cover" src="assets/hero.jpg" placeholder="hero"></image-slot>
+  </div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-kick eyebrow hero-fade">
+      <span id="heroLoc">Fotografie · Rotterdam</span>
+      <span id="heroAvail">Beschikbaar 2027</span>
+    </div>
+    <h1 class="hero-h">
+      <span class="ln"><span id="heroTitle1">Wat woorden</span></span>
+      <span class="ln"><span id="heroTitle2"><em>niet</em> zeggen.</span></span>
+    </h1>
+    <p class="hero-sub hero-fade" id="heroSub">Portret, merk en reizen. Ik zoek de emotie die niemand uitspreekt — en leg vast wat blijft.</p>
+    <div class="hero-btns hero-fade">
+      <a class="btn" href="portfolio.html" data-mag>Bekijk werk <span class="arr">→</span></a>
+      <a class="btn btn--ghost" href="diensten.html" data-mag>Diensten &amp; tarieven</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><span class="l">Scroll</span><span class="bar"></span></div>
+</header>
+
+<!-- ===================== KINETISCHE REGEL ===================== -->
+<div class="kinetic" aria-hidden="true">
+  <div class="kinetic-track" id="kinetic">
+    <span>Op gevoel</span><span class="dot">/</span><span>Op ritme</span><span class="dot">/</span><span>Op het juiste moment</span><span class="dot">/</span><span>Portret</span><span class="dot">/</span><span>Merk</span><span class="dot">/</span><span>Reizen</span><span class="dot">/</span><span>Op gevoel</span><span class="dot">/</span><span>Op ritme</span><span class="dot">/</span><span>Op het juiste moment</span><span class="dot">/</span><span>Portret</span><span class="dot">/</span><span>Merk</span><span class="dot">/</span><span>Reizen</span><span class="dot">/</span>
+    <span>Op gevoel</span><span class="dot">/</span><span>Op ritme</span><span class="dot">/</span><span>Op het juiste moment</span><span class="dot">/</span><span>Portret</span><span class="dot">/</span><span>Merk</span><span class="dot">/</span><span>Reizen</span><span class="dot">/</span><span>Op gevoel</span><span class="dot">/</span><span>Op ritme</span><span class="dot">/</span><span>Op het juiste moment</span><span class="dot">/</span><span>Portret</span><span class="dot">/</span><span>Merk</span><span class="dot">/</span><span>Reizen</span><span class="dot">/</span>
+  </div>
+</div>
+
+<!-- ===================== MANIFESTO ===================== -->
+<section class="manifesto" data-screen-label="Manifest">
+  <div class="wrap">
+    <span class="eyebrow">01 — Manifest</span>
+    <h2 class="mani-h" id="maniText">Ik kom uit de muziek.</h2>
+  </div>
+</section>
+
+<!-- ===================== HORIZONTALE WERK-STROOK ===================== -->
+<section class="strip-sec" data-screen-label="Werk-strook">
+  <div class="wrap strip-head">
+    <h2>Recent werk</h2>
+    <a class="eyebrow" href="portfolio.html" style="white-space:nowrap">Alle projecten →</a>
+  </div>
+  <div class="kstrip" id="kstrip"></div>
+  <div class="strip-hint"><span>←  Sleep / scroll horizontaal</span></div>
+</section>
+
+<!-- ===================== UITGELICHTE CASE ===================== -->
+<section class="work" data-screen-label="Uitgelicht">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Uitgelicht</h2>
+      <a class="eyebrow" href="portfolio.html" style="white-space:nowrap">Bekijk reeks →</a>
+    </div>
+    <div class="case rv" id="featuredCase"></div>
+  </div>
+</section>
+
+<!-- ===================== SPECIALISMEN ===================== -->
+<section class="spec" data-screen-label="Specialismen">
+  <div class="wrap">
+    <span class="eyebrow rv">02 — Wat ik doe</span>
+    <div class="spec-rows rv">
+      <a class="srow" href="portfolio.html#portret" data-prev="0">
+        <span class="num">01</span>
+        <span><h3>Portret</h3><span class="en">Portrait</span></span>
+        <span class="arr">→</span>
+      </a>
+      <a class="srow" href="portfolio.html#commercieel" data-prev="1">
+        <span class="num">02</span>
+        <span><h3>Commercieel</h3><span class="en">Commercial</span></span>
+        <span class="arr">→</span>
+      </a>
+      <a class="srow" href="portfolio.html#reizen" data-prev="2">
+        <span class="num">03</span>
+        <span><h3>Reizen</h3><span class="en">Travel</span></span>
+        <span class="arr">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+<div class="spec-preview" id="specPreview" aria-hidden="true"></div>
+
+<!-- ===================== OVER ===================== -->
+<section class="about" data-screen-label="Over">
+  <div class="wrap about-grid">
+    <div class="about-media rv">
+      <div class="pimg" data-px="44"><image-slot id="aboutSlot" shape="rect" fit="cover" src="assets/ayvo-portrait.jpeg" placeholder="portret"></image-slot></div>
+    </div>
+    <div class="about-text rv rv-2">
+      <span class="eyebrow">Achter de camera</span>
+      <p class="lead" id="aboutLead">Ik ben Ayvo.</p>
+      <p id="aboutBody"></p>
+      <a class="more" id="aboutLink" href="over.html" style="display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--acc);padding-bottom:4px">Meer over mij</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== JOURNAL ===================== -->
+<section class="journal" data-screen-label="Journal">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Journal</h2>
+      <a class="eyebrow" href="blog.html" style="white-space:nowrap">Alle verhalen →</a>
+    </div>
+    <div class="jt-grid" id="journalGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="cta" data-screen-label="Contact">
+  <div class="wrap">
+    <span class="eyebrow" id="ctaEyebrow">Laten we iets maken</span>
+    <h2><span id="ctaTitle1">Klaar voor</span><br><span id="ctaTitle2">jouw <em>verhaal</em>?</span></h2>
+    <a class="btn cta-btn" href="contact.html" data-mag id="ctaBtn">Plan een shoot <span class="arr">→</span></a>
+    <a class="cta-mail" id="ctaMail" href="mailto:hello@byayvo.nl">hello@byayvo.nl</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>© 2027 By Ayvo</span>
+    <div class="foot-links">
+      <a href="portfolio.html">Werk</a>
+      <a href="diensten.html">Diensten</a>
+      <a href="contact.html">Contact</a>
+      <a id="footInsta" href="#" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <span>Rotterdam · NL</span>
+  </div>
+</footer>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#0b0b0a"/>
+    <rect x="18" y="18" width="64" height="64" fill="none" stroke="#f6f5f1" stroke-width="3"/>
+    <circle cx="50" cy="50" r="15" fill="none" stroke="#f6f5f1" stroke-width="3"/>
+    <circle cx="50" cy="50" r="5" fill="oklch(0.66 0.14 52)"/>
+  </svg>
+</template>
+
+<script src="image-slot.js"></script>
+<script src="cms-render.js"></script>
+</body>
+</html>

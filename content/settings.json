@@ -1,0 +1,26 @@
+{
+  "brand": "By Ayvo",
+  "hero": {
+    "image": "assets/hero.jpg",
+    "location": "Fotografie · Rotterdam",
+    "availability": "Beschikbaar 2027",
+    "title_line1": "Wat woorden",
+    "title_line2": "*niet* zeggen.",
+    "subtitle": "Portret, merk en reizen. Ik luister naar wat mensen niet zeggen, en leg vast wat blijft."
+  },
+  "stats": [
+    { "value": "120+", "label": "shoots per jaar" },
+    { "value": "8 jr", "label": "achter de lens" },
+    { "value": "3", "label": "specialismen" }
+  ],
+  "contact": {
+    "email": "hello@byayvo.nl",
+    "phone": "+31 6 1234 5678",
+    "instagram_url": "https://instagram.com/byayvo",
+    "instagram_label": "Instagram"
+  },
+  "seo": {
+    "description": "By Ayvo — portret-, commerciële en reisfotografie. Rotterdam.",
+    "og_image": "assets/ayvo-portrait.jpeg"
+  }
+}

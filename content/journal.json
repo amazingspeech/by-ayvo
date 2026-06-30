@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "title": "Aan de andere kant van de lens",
+      "date": "2026-06-12",
+      "category": "Portret",
+      "cover": "assets/drummer.jpg",
+      "excerpt": "Wat er gebeurt in de seconde voordat iemand zichzelf vergeet."
+    },
+    {
+      "title": "Het licht van Tenerife",
+      "date": "2026-05-02",
+      "category": "Reizen",
+      "cover": "assets/tenerife-masca.jpg",
+      "excerpt": "Een week op zoek naar het uur dat alles zacht maakt."
+    },
+    {
+      "title": "De emotie die niemand uitspreekt",
+      "date": "2026-03-14",
+      "category": "Techniek",
+      "cover": "assets/architectuur-zwart.jpg",
+      "excerpt": "Waarom ik wacht op het moment net ná de pose."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "projects": [
+    {
+      "title": "Drummer",
+      "category": "Portret",
+      "date": "2026",
+      "featured": false,
+      "cover": "assets/drummer.jpg",
+      "description": "Ritme, zweet en focus. Een portret op het moment net voor de eerste slag.",
+      "gallery": ["assets/drummer.jpg"]
+    },
+    {
+      "title": "Zwart paviljoen",
+      "category": "Commercieel",
+      "date": "2026",
+      "featured": true,
+      "cover": "assets/architectuur-zwart.jpg",
+      "description": "Een studie in vorm, materiaal en licht. Een strak zwart volume tegen witte muren, waar architectuur bijna een portret wordt.",
+      "gallery": ["assets/architectuur-zwart.jpg"]
+    },
+    {
+      "title": "Masca",
+      "category": "Reizen",
+      "date": "2025",
+      "featured": false,
+      "cover": "assets/tenerife-masca.jpg",
+      "description": "Het ravijn van Masca bij vroeg licht — diepte, mist en stilte.",
+      "gallery": ["assets/tenerife-masca.jpg", "assets/tenerife-bergen.jpg"]
+    },
+    {
+      "title": "Casa",
+      "category": "Reizen",
+      "date": "2025",
+      "featured": false,
+      "cover": "assets/casa-deur.jpg",
+      "description": "Kleur, textuur en het toeval van een open deur.",
+      "gallery": ["assets/casa-deur.jpg", "assets/tenerife-casa-mesa.jpg"]
+    },
+    {
+      "title": "Straat",
+      "category": "Reizen",
+      "date": "2025",
+      "featured": false,
+      "cover": "assets/tenerife-straat.jpg",
+      "description": "Mensen, licht en het ritme van de stad.",
+      "gallery": ["assets/tenerife-straat.jpg", "assets/tenerife-laguna2.jpg"]
+    }
+  ]
+}
